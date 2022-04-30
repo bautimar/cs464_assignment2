@@ -91,31 +91,48 @@ If this happens, you can install beets for the current user only by typing
 Installing on Windows
 ^^^^^^^^^^^^^^^^^^^^^
 
-Installing beets on Windows can be tricky. Following these steps might help you
-get it right:
+Installing beets on Windows can be tricky. Steps listed below are based on Windows 10.
+Following these steps might help you get it right:
 
-1. If you don't have it, `install Python`_ (you want Python 3.6). The
-   installer should give you the option to "add Python to PATH." Check this
-   box. If you do that, you can skip the next step.
+1. If you don't have it, `install Python`_ (you want at least Python 3.6). 
+   The latest major version of Python is 3.10. The installer should give you 
+   the option to "add Python to PATH." Check this box. If you do that, 
+   you can skip the next step.
 
 2. If you haven't done so already, set your ``PATH`` environment variable to
-   include Python and its scripts. To do so, you have to get the "Properties"
-   window for "My Computer", then choose the "Advanced" tab, then hit the
-   "Environment Variables" button, and then look for the ``PATH`` variable in
-   the table. Add the following to the end of the variable's value:
-   ``;C:\Python36;C:\Python36\Scripts``. You may need to adjust these paths to
-   point to your Python installation.
+   include Python and its scripts. To do so, open the "Settings" application, 
+   then access the "System" screen, then access the "About" tab, and then click 
+   "Advanced system settings" located on the right side of the screen. This 
+   should open the "System Properties" screen, then select the "Advanced" tab, 
+   and then select the "Environmental Variables" button. In the "Environmental 
+   Variables" screen, look for the ``PATH`` variable in the user variable and 
+   system variable tables. Add the following to the end of the variable's 
+   value: ``;C:\Python310;C:\Python310\Scripts``. You may need to adjust 
+   these paths to point to your Python installation.
 
-3. Now install beets by running: ``pip install beets``
+3. Check if Python is installed on your system. Open the "Command Prompt" application, 
+   and enter "python --version". The installed version of Python should be printed. If not,
+   double check to see if ``PATH`` environment variables are correctly pointing to your 
+   Python installation path.
 
-4. You're all set! Type ``beet`` at the command prompt to make sure everything's
+4. Now install beets by running: ``pip install beets``.
+
+5. You're all set! Type ``beet`` in the command prompt to make sure everything's
    in order.
 
 Windows users may also want to install a context menu item for importing files
-into beets. Download the `beets.reg`_ file and open it in a text file to make
-sure the paths to Python match your system. Then double-click the file add the
-necessary keys to your registry. You can then right-click a directory and
-choose "Import with beets".
+into beets. This approach allows for the option to add directories through 
+the GUI, in addition to the command line.
+
+1. Download the `beets.reg`_ file and open it in a text file to make sure the 
+   paths to Python match your system. Replace the quoted path with the beets 
+   executable located in the "Scripts" folder within the "Python" directory.
+
+2. Then double-click the file to add the necessary keys to your root registry.
+   When prompted by Windows to give permission in changing the registry, select 
+   "Yes".
+
+3. Now, you should be able to right-click a directory and choose "Import with beets".
 
 Because I don't use Windows myself, I may have missed something. If you have
 trouble or you have more detail to contribute here, please direct it to
